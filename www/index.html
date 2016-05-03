@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <title>Demo</title>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="col-xs-12">
+    <header>
+        <img class="img-responsive logo" src="img/logo.png" alt="logo">
+        <div class="division"></div>
+    </header>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 sm-col-12">
+            <p class="text-center show"><button class="btn btn-info" style="margin-top: 1em;"><a class="prueba" onclick="window.plugins.toast.showShortTop('Estoy arriba!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})">toast top</a></button></p>
+        </div>
+        <div class="col-xs-6 sm-col-12">
+            <p class="text-center show"><button class="btn btn-info" style="margin-top: 1em;"><a class="prueba" onclick="window.plugins.toast.showShortCenter('Estoy en el centro!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})">toast center</a></button></p>
+        </div>
+        <div class="col-xs-6 sm-col-12">
+            <p class="text-center show"><button class="btn btn-info" style="margin-top: 1em;"><a class="prueba" onclick="window.plugins.toast.showShortBottom('Estoy abajo!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})">toast bottom</a></button></p>
+        </div>
+        <div class="col-xs-6 sm-col-12">
+            <p class="text-center show"><button class="btn btn-info" style="margin-top: 1em;"><a class="alerta" onclick="navigator.vibrate([1000]);">probar vibración</a></button></p>
+        </div>
+        <div class="col-xs-12 sm-col-12">
+            <p class="text-center show"><button class="btn btn-info" style="margin-top: 1em;"><a class="alerta" onclick="window.plugins.imeiplugin.getImei(callback);">ver imei</a></button></p>
+        </div>
+    </div>
+    <div class="container">
+            <!--<h1 class="text-center">Acelerómetro</h1>
+            <div class="well">
+                <div class="form-group">
+                <label for="ejeX">Eje X:</label>
+                <input type="text" class="form-control" id="ejeX">
+                </div>
+                <div class="form-group">
+                <label for="ejeY">Eje Y:</label>
+                <input type="text" class="form-control" id="ejeY">
+                </div>     
+                <div class="form-group">
+                <label for="ejeZ">Eje Z:</label>
+                <input type="text" class="form-control" id="ejeZ">
+                </div>
+                <p class="text-center"><button id="sensor" class="btn btn-block btn-info">Probar sensor</button></p>
+                <p class="text-center"><button id="sensor2" class="btn btn-block btn-info">Parar</button></p>
+                <div id="caja">
+                <div id="punto">
+                </div>
+                </div>
+            </div>-->
+            <p class="text-center"><audio id="player" controls preload="none">
+                <source id="sound" type="audio/mpeg">
+                Audio No soportado
+            </audio>
+            </p>
+            <div class="col-xs-12">
+            <div id="progressbar">
+                <div class="progress-label"></div>
+                </div>
+            </div>
+            <p class="text-center"><button id="check" class="btn btn-block btn-info">comprobar</button></p>
+            </div>
+</div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/funcion.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+        function callback(imei) {
+        navigator.notification.alert(imei, alertDismissed, 'IMEI', 'OK');
+        }
+        function alertDismissed() {
+        }
+    </script>
+</body>
+</html>
