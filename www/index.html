@@ -41,30 +41,32 @@
             <p class="text-center show"><button class="btn btn-info" style="margin-top: 1em;"><a class="alerta" onclick="window.plugins.imeiplugin.getImei(callback);">ver imei</a></button></p>
         </div>
     </div>
-    <div class="container">
-            <p class="text-center"><audio id="player" controls preload="none">
-                <source id="sound" type="audio/mpeg">
-                Audio No soportado
-            </audio>
-            </p>
-            <div class="col-xs-12">
-            <div id="progressbar">
-                <div class="progress-label"></div>
-                </div>
+<div class="container">
+    <p class="text-center">
+        <audio id="player" controls preload="none">
+            <source id="sound" type="audio/mpeg">
+            Audio No soportado
+        </audio>
+    </p>
+    <div class="col-xs-12">
+        <div id="progressbar">
+            <div class="progress-label">
             </div>
-            <p class="text-center"><button id="check" class="btn btn-block btn-info">comprobar</button></p>
-            </div>
+        </div>
+    </div>
+    <p class="text-center"><button id="check" class="btn btn-block btn-info">comprobar</button></p>
+    </div>
 </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/funcion.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-        function callback(imei) {
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/funcion.js"></script>
+<script type="text/javascript">
+    app.initialize();
+    function callback(imei) {
         navigator.notification.alert(imei, alertDismissed, 'IMEI', 'OK');
-        }
-        function alertDismissed() {
-        }
-    </script>
+    }
+    function alertDismissed() {
+    }
+</script>
 </body>
 </html>
