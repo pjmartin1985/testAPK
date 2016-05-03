@@ -23,18 +23,10 @@ function start(){
     }
 }
 function comprobar(){
-    //alert(cordova.file.applicationDirectory);
-    //alert(cordova.file.dataDirectory);
-    //alert(cordova.file.dataDirectory + fileName);  
-    //window.resolveLocalFileSystemURI("file:///storage/emulated/0/1/archivo.txt", onResolveSuccess, downloadAsset);
     window.resolveLocalFileSystemURI(cordova.file.dataDirectory + fileName, onResolveSuccess, downloadAsset);
 };
 function onResolveSuccess(fileEntry) {
-    //alert(fileEntry.name);
-    //var reproductor = new Media(cordova.file.dataDirectory + fileName, termino, error);
-    //reproductor.play();
     $("#sound").attr("src", cordova.file.dataDirectory + fileName).detach().appendTo($("#player"));
-    //console.log("existe");
 };
 function termino(){
     console.log("reproducido");
@@ -44,7 +36,6 @@ function error(){
 }
 function downloadAsset() {
     var fileTransfer = new FileTransfer();
-    //alert("Bajemos el sonido!");
     $("#check").hide();
     progressBar.show();
     fileTransfer.onprogress = function(progressEvent) {
@@ -57,7 +48,6 @@ function downloadAsset() {
     };
     fileTransfer.download(assetURL, cordova.file.dataDirectory + fileName, 
         function(entry) {
-            //alert("Descargado!");
             localStorage.status = 1;
             start();
         }, 
